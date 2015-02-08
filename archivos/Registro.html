@@ -1,0 +1,171 @@
+<html>
+<head>
+
+<title>Registro</title>
+
+<style type="text/css">
+<!--
+#Layer1 {
+	position:absolute;
+	width:1366px;
+	height:119px;
+	z-index:1;
+	left: -2px;
+	top: 2px;
+	background:#2c4762;
+	color:#FFFFFF;
+	
+}
+#Layer2 {
+	position:absolute;
+	width:1366px;
+	height:500px;
+	z-index:2;
+	left: 0px;
+	top: 123px;
+	background:#000066;
+	color:#FFFFFF;
+}
+#Layer3 {
+	position:absolute;
+	width:1380px;
+	height:35px;
+	z-index:1;
+	left: -14px;
+	top: 502px;
+	background:#2c4762;
+	color:#FFFFFF;
+}
+#Layer4 {
+	position:absolute;
+	width:425px;
+	height:222px;
+	z-index:2;
+	left: 475px;
+	top: 89px;
+	color:#ffffff;
+}
+.Estilo2 {color: #FFFFFF}
+#Layer5 {
+	position:absolute;
+	width:191px;
+	height:65px;
+	z-index:1;
+	left: 576px;
+	top: 30px;
+	font:"Times New Roman", Times, serif;
+	font-size:40px;
+}
+#Layer6 {
+	position:absolute;
+	width:154px;
+	height:23px;
+	z-index:1;
+	left: 613px;
+	top: 6px;
+}
+#Layer7 {
+	position:absolute;
+	width:200px;
+	height:58px;
+	z-index:3;
+	left: -395px;
+	top: -45px;
+}
+-->
+</style>
+<script language="JavaScript" src="md5.js"></script>
+<script  language="JavaScript">
+function encriptar(){
+hash = calcMD5(document.getElementById('contrasena').value);
+document.getElementById('contrasena').value=hash;
+alert("REGISTRO CORRECTO");
+document.form1.submit();
+return 0;
+}
+</script>
+
+</head>
+
+<body>
+<form name="form1" method="post" action="nuevoregistro.php" enctype="multipart/form-data">
+<div id="Layer2">
+  <div id="Layer4">
+    <table width="400" border="0">
+      <tr>
+        <td><span class="Estilo2">Nombre</span></td>
+        <td>
+          <label>
+          <input name="nombre" type="text" id="nombre">
+          </label>
+        
+        </td>
+      </tr>
+      <tr>
+        <td><span class="Estilo2">Apellidos</span></td>
+        <td>
+          <label>
+            <input name="apellidos" type="text" id="apellidos">
+            </label>
+      
+        </td>
+      </tr>
+      <tr>
+        <td><span class="Estilo2">Nombre de Usuario </span></td>
+        <td>
+          <label>
+            <input name="usuario" type="text" id="usuario">
+            </label>
+      
+        </td>
+      </tr>
+      <tr>
+        <td><span class="Estilo2">Contrase&ntilde;a</span></td>
+        <td>
+          <label>
+            <input name="contrasena" type="password" id="contrasena">
+            </label>
+      
+        </td>
+      </tr>
+      <tr>
+        <td><span class="Estilo2">Correo</span></td>
+        <td>
+          <label>
+            <input name="correo" type="text" id="correo">
+            </label>
+      
+        </td>
+      </tr>
+      <tr>
+        <td><span class="Estilo2">Foto</span></td>
+        <td>
+          <label>
+            <input name="foto" type="file" id="foto">
+            </label>
+       
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>
+            <input type="button" onclick= "encriptar()"  id="Button" value="Terminar" />
+            </label>
+      
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+	<a href="login1.php"></a>
+	<div id="Layer7"><a href="index.php"><font color="#FFFFFF"><font size="+5">Regresar</font></font></a></div>
+  </div>
+  <div id="Layer3">
+    <div id="Layer6">TU WEBCLASS.INC </div>
+  </div>
+</div>
+<div id="Layer1">
+  <div id="Layer5">Registro</div>
+</div>
+</form> 
+</body>
+</html>

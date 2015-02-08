@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Documento sin t&iacute;tulo</title>
+<style type="text/css">
+<!--
+#Layer1 {
+	position:absolute;
+	width:212px;
+	height:56px;
+	z-index:1;
+}
+.Estilo1 {color: #FFFFFF}
+#Layer2 {
+	position:absolute;
+	width:555px;
+	height:222px;
+	z-index:2;
+	left: 93px;
+	top: 74px;
+}
+-->
+</style>
+</head>
+
+<body style="background-color:#2c4762">
+<form name="form1" method="post" action="consigueactividad.php">
+<div id="Layer1"><span class="Estilo1">PLANEACION DE LA CLASE </span></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div id="Layer2">
+  <table width="400" border="0">
+    <tr>
+      <th scope="col">
+        <input type="hidden" name="nombreactividad" />
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <input type="hidden" name="fecha" value="<?php echo $fecha; ?>" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="hidden" name="Descripcion" />
+      </td>
+    </tr>
+	<?php
+  $nombreactividad=$_POST["nombreactividad"];
+  $fecha=$_POST["fecha"];
+  $descripcion=$_POST["Descripcion"];
+  
+  $id_conexion=mysql_connect("localhost","root","123") or die ("Error de coneccion de base de datos"); 
+  mysql_select_db("rsa", $id_conexion) or die ("Error no sirve");
+  $sql="select * from planeacion;";
+   $result=mysql_query($sql,$id_conexion) or die ("Error al ejecutar la sentencia SQL");
+  while ($row=mysql_fetch_array($result))
+  {	
+  	echo "<tr> \n";
+  	echo "<td>".$row["nombreactividad"]."</td> \n";
+	echo "<td>".$row["fecha"]."</td> \n";
+	echo "<td>".$row["Descripcion"]."</td> \n";
+	}
+  ?>
+  </table>
+    <label>
+      <input type="submit" name="Submit" value="Conseguir" />
+    </label>
+  <p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</body>
+</html>
